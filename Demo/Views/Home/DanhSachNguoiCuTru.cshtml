@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách người cư trú</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Danh sách người cư trú</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Mã hộ</th>
+                    <th scope="col">Họ tên</th>
+                    <th scope="col">Tuổi</th>
+                    <th scope="col">Giới tính</th>
+                    <th scope="col">Mối quan hệ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var nguoiCuTru in Model)
+                {
+                    <tr>
+                        <td>@nguoiCuTru.MaHocGiaDinh</td>
+                        <td>@nguoiCuTru.HoTen</td>
+                        <td>@nguoiCuTru.Tuoi</td>
+                        <td>@nguoiCuTru.GioiTinh</td>
+                        <td>@nguoiCuTru.MoiQuanHe</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <br />
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Quay lại</a>
+       
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyTDP" Class="dataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.DongGopPhi" Member="DongGopPhis">
+    <Type Name="DongGopPhi">
+      <Column Name="MaDongGop" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaHocGiaDinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LoaiDongGop" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NgayDongGop" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="HocGiaDinh_DongGopPhi" Member="HocGiaDinh" ThisKey="MaHocGiaDinh" OtherKey="MaHocGiaDinh" Type="HocGiaDinh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhiVeSinh" Member="PhiVeSinhs">
+    <Type Name="PhiVeSinh">
+      <Column Name="MaPhi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaHocGiaDinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HocGiaDinh_PhiVeSinh" Member="HocGiaDinh" ThisKey="MaHocGiaDinh" OtherKey="MaHocGiaDinh" Type="HocGiaDinh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HocGiaDinh" Member="HocGiaDinhs">
+    <Type Name="HocGiaDinh">
+      <Column Name="MaHocGiaDinh" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TongSoNguoiTrongGiaDinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThongTinLienHe" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="HocGiaDinh_DongGopPhi" Member="DongGopPhis" ThisKey="MaHocGiaDinh" OtherKey="MaHocGiaDinh" Type="DongGopPhi" />
+      <Association Name="HocGiaDinh_PhiVeSinh" Member="PhiVeSinhs" ThisKey="MaHocGiaDinh" OtherKey="MaHocGiaDinh" Type="PhiVeSinh" />
+      <Association Name="HocGiaDinh_NguoiCuTru" Member="NguoiCuTrus" ThisKey="MaHocGiaDinh" OtherKey="MaHocGiaDinh" Type="NguoiCuTru" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NguoiCuTru" Member="NguoiCuTrus">
+    <Type Name="NguoiCuTru">
+      <Column Name="MaNguoiCuTru" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaHocGiaDinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Tuoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MoiQuanHe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HocGiaDinh_NguoiCuTru" Member="HocGiaDinh" ThisKey="MaHocGiaDinh" OtherKey="MaHocGiaDinh" Type="HocGiaDinh" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

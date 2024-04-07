@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Tổ Dân Phố</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-white p-3 text-center">
+        <h1>Quản Lý Tổ Dân Phố</h1>
+    </header>
+    <main class="container mt-4">
+        <section id="hocgiadinh" class="mb-4">
+            <h2>Danh Sách Hộ Gia Đình</h2>
+            @Html.ActionLink("Danh Sách Hộ Gia Đình", "DanhSachHoGiaDinh", null, new { @class = "btn btn-primary" })
+        </section>
+        <section id="nguoicutru" class="mb-4">
+            <h2>Danh Sách Người Cư Trú</h2>
+            @Html.ActionLink("Danh Sách Người Cư Trú", "DanhSachNguoiCuTru", null, new { @class = "btn btn-primary" })
+        </section>
+        <section id="PhiVeSinhCuaHoGiaDinh" class="mb-4">
+            <h2>Danh Sách phí Vệ Sinh đã đóng của Hộ Gia Đình</h2>
+            @Html.ActionLink("Phí Vệ Sinh của Hộ Gia Đình", "PhiVeSinhCuaHoGiaDinh", null, new { @class = "btn btn-primary" })
+        </section>
+        <section id="donggopphi" class="mb-4">
+            <h2>Đóng Góp Phí</h2>
+            @Html.ActionLink("Đóng Góp Phí", "ThemMoiDongGopPhi", null, new { @class = "btn btn-primary" })
+        </section>
+        <section id="TongSoTienDaThu" class="mb-4">
+            <h2>Tổng phí đóng góp</h2>
+            @Html.ActionLink("Tổng phí đóng góp", "TongSoTienDaThu", null, new { @class = "btn btn-primary" })
+        </section>
+        <section id="phivesinh" class="mb-4">
+            <h2>Đóng Phí Vệ Sinh</h2>
+            @Html.ActionLink("Đóng Phí Vệ Sinh", "Phivesinh", null, new { @class = "btn btn-primary" })
+        </section>
+        <section id="ThemMoiNguoiCuTru" class="mb-4">
+            <h2>Thêm người cư trú</h2>
+            @Html.ActionLink("Thêm Mới Người Cư Trú", "ThemMoiNguoiCuTru", null, new { @class = "btn btn-primary" })
+        </section>
+    </main>
+    <footer class="bg-dark text-white p-3 text-center">
+        <p>© 2024 Quản Lý Tổ Dân Phố</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

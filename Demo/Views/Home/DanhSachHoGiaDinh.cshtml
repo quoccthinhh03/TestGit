@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách hộ gia đình</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Danh sách hộ gia đình</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Địa chỉ</th>
+                    <th scope="col">Số người trong gia đình</th>
+                    <th scope="col">Thông tin liên hệ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var hocGiaDinh in Model)
+                {
+                    <tr>
+
+                        <td>@hocGiaDinh.MaHocGiaDinh</td>
+                        <td>@hocGiaDinh.DiaChi</td>
+                        <td>@hocGiaDinh.TongSoNguoiTrongGiaDinh</td>
+                        <td>@hocGiaDinh.ThongTinLienHe</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Quay lại</a>
+        <a href="@Url.Action("ThemMoiHocGiaDinh", "Home")" class="btn btn-primary">Thêm mới</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

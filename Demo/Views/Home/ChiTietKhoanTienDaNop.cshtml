@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Demo.Models.DongGopPhi>
+
+<h2>Chi tiết các khoản tiền đã nộp</h2>
+
+<table>
+    <tr>
+        <th>Loại đóng góp</th>
+        <th>Số tiền</th>
+        <th>Ngày đóng góp</th>
+    </tr>
+    @foreach (var dongGopPhi in Model)
+    {
+        <tr>
+            <td>@dongGopPhi.LoaiDongGop</td>
+            <td>@dongGopPhi.SoTien</td>
+            <
+            <td>
+                @dongGopPhi.NgayDongGop?.ToShortDateString()
+            </td>
+
+        </tr>
+    }
+</table>
